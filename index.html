@@ -9,39 +9,51 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="images/favico.svg" type="image/x-icon">
     <title>Weather.EXE</title>
 </head>
 <body>
-    <div class="container">
-        <div class="search-box">
-            <i class="fa-solid fa-location-dot"></i>
-            <input type="text" placeholder="Enter your location">
-            <button class="fa-solid fa-magnifying-glass"></button>
-        </div>
-        <div class="not-found">
-            <img src="images/404.png" alt="">
-            <p>
-                Oppsies!! LMAO!
-            </p>
-        </div>
-        <div class="weather-box">
-            <img src="">
-            <p class="temperature"></p>
-            <p class="description"></p>
-        </div>
-        <div class="weather-details">
-            <div class="humidity">
-                <i class="fa-solid fa-water"></i>
-                <div class="text">
-                    <span></span>
-                    <p>humidity</p>
-                </div>
+    <div class="heading">
+        <div class="heading2">
+            <div class="stack" style="--stacks: 3;">
+                <span style="--index: 0;">Weather.EXE</span>
+                <span style="--index: 1;">Weather.EXE</span>
+                <span style="--index: 2;">Weather.EXE</span>
             </div>
-            <div class="wind">
-                <i class="fa-solid fa-wind"></i>
-                <div class="text">
-                    <span></span>
-                    <p>Wind Speed</p>
+        </div>
+    </div>
+    <div id="mainBody">
+        <div class="container">
+            <div class="search-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" placeholder="Enter your location">
+                <button class="fa-solid fa-magnifying-glass"></button>
+            </div>
+            <div class="not-found">
+                <img src="images/404.png" alt="">
+                <p>
+                    Oppsies!! Not Found :/ LMAO!
+                </p>
+            </div>
+            <div class="weather-box">
+                <img src="">
+                <p class="temperature"></p>
+                <p class="description"></p>
+            </div>
+            <div class="weather-details">
+                <div class="humidity">
+                    <i class="fa-solid fa-water"></i>
+                    <div class="text">
+                        <span></span>
+                        <p>humidity</p>
+                    </div>
+                </div>
+                <div class="wind">
+                    <i class="fa-solid fa-wind"></i>
+                    <div class="text">
+                        <span></span>
+                        <p>Wind Speed</p>
+                    </div>
                 </div>
             </div>
         </div>

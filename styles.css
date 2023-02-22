@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@100&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -7,18 +9,98 @@
 }
 
 body{
-    height: 100vh;
+    background: #06283D;
+}
+
+#mainBody{
+    height: 80vh;
     display: flex;;
     align-items: center;
     justify-content: center;
-    background: #06283D;
+    flex-direction: column;
+}
+
+.heading{
+    background-color: #00000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    top: 10px;
+}
+  
+.heading2 {
+    color: var(--color);
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+  
+.right {
+    text-align: right;
+    width: 100%;
+}
+  
+.stack {
+    display: grid;
+    grid-template-columns: 1fr;
+    font-family: 'Tourney', cursive;
+}
+  
+.stack span {
+    font-weight: bold;
+    font-family: 'Tourney', cursive;
+    color: #009c41;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    font-size: 3rem;
+    --stack-height: calc(100% / var(--stacks) - 1px);
+    --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+    --clip-top: calc(var(--stack-height) * var(--index));
+    --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+    clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+    animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+}
+  
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+  
+@keyframes stack {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%);
+      text-shadow: -3px 4px 0 red, 3px -4px 0 blue;
+    };
+    60% {
+      opacity: 0.5;
+      transform: translateX(50%);
+    }
+    80% {
+      transform: none;
+      opacity: 1;
+      text-shadow: 3px -4px 0 red, -3px 4px 0 blue;
+    }
+    100% {
+      text-shadow: none;
+    }
+}
+  
+@keyframes glitch {
+    0% {
+      text-shadow: -3px 4px 0 red, 3px -4px 0 blue;
+      transform: translate(var(--glitch-translate));
+    }
+    2% {
+      text-shadow: 3px -4px 0 red, -3px 4px 0 blue;
+    }
+    4%, 100% {  text-shadow: none; transform: none; }
 }
 
 .container{
     position: relative;
     width: 400px;
     height: 105px;
-    background: #fff;
+    background: #ffffffa0;
     padding: 20px 32px;
     overflow: hidden;
     border-radius: 18px;
@@ -35,18 +117,22 @@ body{
 }
 
 .search-box input{
-    color: #06283D;
-    width: 80%;
+    border-radius: 20px;
+    background: #ffffff3a;
+    color: #0d4d74;
+    width: 70%;
+    height: 38px;
     font-size: 24px;
     font-weight: 5000;
     text-transform: uppercase;
+    margin-left: 35px;
     padding-left: 32px;
 }
 
 .search-box input::placeholder{
     font-size: 20px;
     font-weight: 500;
-    color: #06283D;
+    color: #0c4569;
     text-transform: capitalize;
 }
 
@@ -77,7 +163,7 @@ body{
 }
 
 .weather-box img{
-    width: 605;
+    width: 60%;
     margin-top: 30px;
 }
 
@@ -171,7 +257,7 @@ body{
     opacity: 0;
 }
 
-.fade-in{
+.fadeIn{
     animation: 0.5s fadeIn forwards;
     animation-delay: 0.5s;
 }
