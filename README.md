@@ -1,3 +1,3 @@
 # Weather-app
 
-This is a simlple weather app, nothing more, nothin less :)
+This is a simlple weather app, nothing more, nothing less :)
